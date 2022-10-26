@@ -8,6 +8,12 @@ Use a separate potentiometer in controlling each of the colors of the RGB led (R
 ### Solution
 I used 3 variables corresponding to the Red, Green and Blue colors to store the value read from each of the potentiometers (redAnalogValue, greenAnalogValue, blueAnalogValue). Then I mapped those values to the intensity value for each color of the LED using the map() function and stored the mapped values in 3 variables: redValue, greenValue, blueValue. In the end, I passed the mapped values to the pins that the LED is connected to using the analogWrite() function.
 
+### Components used
+- 1x RGB LED
+- 3x Potentiometers
+- 3x Resistors (330 Ω)
+- Wires
+
 ### Picture and scheme of the setup
 
 ![RGB Led with 3 potentiometers scheme](https://user-images.githubusercontent.com/34553466/198073146-00734fee-80fe-4749-86ed-1c23608bd8ce.png)
