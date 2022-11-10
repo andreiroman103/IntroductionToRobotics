@@ -114,5 +114,7 @@ In the state2() function the state of the current segment is set to its last sta
     <img src = "https://user-images.githubusercontent.com/34553466/200983963-f25ed159-6b43-40ef-8db8-c0017f0b523a.jpg" height = "450" width = 45%>
 </p>
     
+### Link for the showcase video
+https://www.youtube.com/watch?v=EEjVxh2KkmE 
 </details>
 
