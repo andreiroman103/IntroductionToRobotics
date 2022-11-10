@@ -21,8 +21,8 @@ I used 3 variables corresponding to the Red, Green and Blue colors to store the 
 ### Picture and scheme of the setup
 
 <p float = "left">
-    <img src = "https://user-images.githubusercontent.com/34553466/198073146-00734fee-80fe-4749-86ed-1c23608bd8ce.png" width = 45%>
-    <img src = "https://user-images.githubusercontent.com/34553466/198073190-bce97339-9b69-43d1-a48b-790c34924ac2.jpg" width = 45%>
+    <img src = "https://user-images.githubusercontent.com/34553466/198073146-00734fee-80fe-4749-86ed-1c23608bd8ce.png" height = "450" width = 45%>
+    <img src = "https://user-images.githubusercontent.com/34553466/198073190-bce97339-9b69-43d1-a48b-790c34924ac2.jpg" height = "450" width = 45%>
 </p>
 
 ### Link for the showcase video
@@ -67,7 +67,8 @@ The system is controlled by a variable called systemState. I created a function 
 ### Picture and scheme of the setup
 
 <p float = "left">
-
+    <img src = "https://user-images.githubusercontent.com/34553466/199082018-d951aea6-38a5-41c4-96a0-5a7b6fae90a4.png" height = "450" width = 45%>
+    <img src = "https://user-images.githubusercontent.com/34553466/199079548-0e334c71-ed21-42fd-96d3-067945a28d2d.jpg" height = "450" width = 45%>
 </p>
 
 ### Link for the showcase video
