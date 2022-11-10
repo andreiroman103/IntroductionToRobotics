@@ -74,3 +74,45 @@ The system is controlled by a variable called systemState. I created a function 
 ### Link for the showcase video
 https://www.youtube.com/shorts/SouPqYfCUUE
 </details>
+
+<details>
+<summary> Homework 3 </summary>
+
+# Homework 3
+    
+### Task
+"Drawing" on the 7-segment display using the joystick to control the position of the segment. The system has the following states:
+ - State 1 (default, but also initiated after a button press in State 2): Current position blinking. Can use the joystick to move from one position to neighbors. Short pressing the button toggles state 2. Long pressing the button in state 1 resets the entire display by turning all the segments OFF and moving the current position to the decimal point.
+- State 2 (initiated after a button press in State 1): The current segment stops blinking, adopting the state of the segment before selection (ON or OFF). Toggling the X (or Y) axis should change the segment state from ON to OFF or from OFF to ON. Clicking the joystick should save the segment state and exit back to state 1.
+Long pressing the button to reset should only be available in State 1.
+
+Possible moves:
+| Current segment |  UP | DOWN | LEFT | RIGHT |
+|:---------------:|:---:|:----:|:----:|:-----:|
+|        a        | N/A |   g  |   f  |   b   |
+|        b        |  a  |   g  |   f  |  N/A  |
+|        c        |  g  |   d  |   e  |   dp  |
+|        d        |  g  |  N/A |   e  |   c   |
+|        e        |  g  |   d  |  N/A |   c   |
+|        f        |  a  |   g  |  N/A |   b   |
+|        g        |  a  |   d  |  N/A |  N/A  |
+|        dp       | N/A |  N/A |   c  |  N/A  |
+    
+### Solution
+The variable systemState is used to toggle between the 2 states, each having its own function. In the state1() function, I made the current segment blink and read the X and Y values of the joystick in order to change the segments according to the possible movements. I used the possibleMovements matrix to store the possible moves each segment can have (the matrix is 8x4, each row represents a segment and each column a direction). This matrix is used in the changeSegment() function, which takes the direction parameter and sets the next segment (for example if the current segment is a and the direction is right, the next segment will be b).
+In the state2() function the state of the current segment is set to its last state (stored in the segmentsStates vector) and the X value of the joystick is read in order to change the state of the current segment. If the system is in state 1 and the button is pressed for long, the system will be reset, but if the button is pressed shortly, the system will go in the second state. If the system is in the second state and the button is pressed shortly, the system will go back to state 1.
+    
+### Components used
+- 1x 7-segment display
+- 1x joystick
+- 2x Resistors (1000 Ω)
+- Wires
+    
+### Picture and scheme of the setup
+<p float = "left">
+    <img src = "https://user-images.githubusercontent.com/34553466/200983636-ce241dc1-1184-4629-a9ad-1f0bb487c07b.png" height = "450" width = 45%>
+    <img src = "https://user-images.githubusercontent.com/34553466/200983963-f25ed159-6b43-40ef-8db8-c0017f0b523a.jpg" height = "450" width = 45%>
+</p>
+    
+</details>
+
