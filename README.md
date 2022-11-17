@@ -99,7 +99,7 @@ Possible moves:
 |        dp       | N/A |  N/A |   c  |  N/A  |
     
 ### Solution
-The variable systemState is used to toggle between the 2 states, each having its own function. In the state1() function, I made the current segment blink and read the X and Y values of the joystick in order to change the segments according to the possible movements. I used the possibleMovements matrix to store the possible moves each segment can have (the matrix is 8x4, each row represents a segment and each column a direction). This matrix is used in the changeSegment() function, which takes the direction parameter and sets the next segment (for example if the current segment is a and the direction is right, the next segment will be b).
+The systemState variable is used to toggle between the 2 states, each having its own function. In the state1() function, I made the current segment blink and read the X and Y values of the joystick in order to change the segments according to the possible movements. I used the possibleMovements matrix to store the possible moves each segment can have (the matrix is 8x4, each row represents a segment and each column a direction). This matrix is used in the changeSegment() function, which takes the direction parameter and sets the next segment (for example if the current segment is a and the direction is right, the next segment will be b).
 In the state2() function the state of the current segment is set to its last state (stored in the segmentsStates vector) and the X value of the joystick is read in order to change the state of the current segment. If the system is in state 1 and the button is pressed for long, the system will be reset, but if the button is pressed shortly, the system will go in the second state. If the system is in the second state and the button is pressed shortly, the system will go back to state 1.
     
 ### Components used
@@ -118,3 +118,35 @@ In the state2() function the state of the current segment is set to its last sta
 https://www.youtube.com/watch?v=EEjVxh2KkmE 
 </details>
 
+<details>
+<summary> Homework 4 </summary>
+
+# Homework 4
+    
+### Task
+"Drawing" HEX numbers on the 4 digit 7-segment display using the joystick to control the digit and the written number. The system has the following states:
+- First state: you can use a joystick axis to cycle through the 4 digits; using the other axis does nothing. A blinking decimal point shows the current digit position. When pressing the button, you lock in on
+the selected digit and enter the second state.
+- Second state: in this state, the decimal point stays always on, no longer blinking and you can no longer use the axis to cycle through the 4 digits. Instead, using the other axis, you can increment on decrement the number on the current digit IN HEX (aka from 0 to F, as in the lab). Pressing the button again returns you to the previous state. Also, keep in mind that when changing the number, you must increment it for each joystick movement - it should not
+work continuosly increment if you keep the joystick in one position (aka with joyMoved).
+- Reset: toggled by long pressing the button only in the first state. When resetting, all the digits go back to 0 and the current position is set to the first (rightmost) digit, in the first state.
+
+### Solution
+The systemState variable controls the state changes. In the state1() function, I made the dp of the current digit blink and used the Y axis to change between the 4 digits of the display. The state2() function uses the X axis of the joystick to change the number displayed on the selected digit. The reset() function changes the current digit to the first digit and sets all the digits back to 0. The writeReg() function is the one shifting the bits in the shift register and it is used inside the writeNumber() function to display the number on the digit. 
+
+### Components used
+- 1x 4 digit 7-segment display
+- 1x joystick
+- 1x 74hc595 shift register
+- 4x Resistors (1000 Ω)
+- Wires
+
+### Picture and scheme of the setup
+<p float = "left">
+    <img src = "https://user-images.githubusercontent.com/34553466/202419119-ea78cd9d-711f-44f3-98de-36200037d054.png" height = "450" width = 45%>
+    <img src = "https://user-images.githubusercontent.com/34553466/202419169-2f116d22-e8c5-4804-8550-b90321e0651d.jpg" height = "450" width = 45%>
+</p>
+
+### Link for the showcase video
+https://www.youtube.com/watch?v=yw67836DK_4
+</details>
