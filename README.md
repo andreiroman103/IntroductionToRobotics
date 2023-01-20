@@ -155,3 +155,8 @@ https://www.youtube.com/watch?v=yw67836DK_4
 <summary> Matrix Project </summary>
 https://github.com/andreiroman103/MatrixProject-REMEMBER-Robotics
 </details>
+
+<details>
+<summary> Line Follower Project </summary>
+https://github.com/andreiroman103/LineFollower-Robotics
+</details>
